@@ -84,6 +84,6 @@ To set up the frontend for the rule engine application, follow these steps:
    ```
 
   ## Hosting
-  -Backend: Hosted on Render.
-	-Frontend: Hosted on Netlify.
+ -Backend: Hosted on Render
+-Frontend: Hosted on Netlify
 
