@@ -19,6 +19,10 @@ app.use(express.json());
 // Routes
 app.use('/api/rules', router);
 
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
 const PORT = 5004;
 
 app.listen(PORT, () => {
