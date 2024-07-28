@@ -49,3 +49,37 @@ function combine_rules(rules) {
 }
 ```
 ![combine_rule logical diagram](combine_rule.png)
+
+# AST Evaluation Controller
+
+This controller provides functionality to evaluate rules stored in MongoDB using an Abstract Syntax Tree (AST). It includes methods to reconstruct the AST from node IDs in MongoDB (`reconstructAST`), evaluate the AST against a set of conditions (`evaluateAST`), and handle HTTP requests for rule evaluation (`evaluateRule`). The `evaluateRule` function retrieves a rule by name, reconstructs its AST, evaluates it based on provided conditions, and returns the result. Error handling is implemented to return appropriate HTTP status codes and log errors to the console. Ensure MongoDB models for `Node` and `Rule` are defined and connected in your application.
+
+
+## cloning repo
+
+```bash
+git clone https://github.com/your-repo/repository.git
+```
+
+## Backend Setup
+
+To set up the backend for the rule engine application, follow these steps:
+
+   ```bash
+   cd repository/backend
+   npm i
+   node index.js
+   ```
+don't forget to add ur MONGO_URL
+
+
+## frontend Setup
+
+To set up the frontend for the rule engine application, follow these steps:
+
+   ```bash
+   cd repository/frontend
+   npm i
+   node start
+   ```
+   
