@@ -35,3 +35,17 @@ Define the choice of database for storing the above rules and application metada
 
 -This function takes a string representing a rule (as shown in the examples) and returns a Node object representing the corresponding AST. The Shunting Yard algorithm is used to convert the rule string into a postfix expression, which is then used to construct the AST.
 ![create_rule logical diagram](create_rule.png)
+
+### 2. `combine_rules(rules)`
+This function takes a list of rule strings and combines them into a single AST. The function concatenates the rules using the AND operator to form a combined rule. The combined rule is then converted into an AST and returned as the root node of the combined AST.
+
+```javascript
+function combine_rules(rules) {
+  // Concatenate all rules using the AND operator
+  const combinedRuleString = rules.join(' AND ');
+
+  // Convert the combined rule string to AST
+  return create_rule(combinedRuleString);
+}
+```
+![combine_rule logical diagram](combine_rule.png)
