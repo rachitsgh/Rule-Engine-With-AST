@@ -12,8 +12,8 @@ class ASTNode {
 }
 
 const ElemType = {
-    COMPARISON: 'COMPARISON',
-    LOGICAL: 'LOGICAL'
+    COMPARISON:2,
+    LOGICAL:1,
 };
 
 // Function to reconstruct the AST from MongoDB
@@ -44,11 +44,11 @@ const evaluateAST = (node, conditions) => {
 
         if (node.elemType === ElemType.COMPARISON) {
             const leftValue = conditions[node.left.value]; // Get the value of the left node (e.g., 'age' or 'department')
-            const parsedRightValue = conditions[node.right.value] !== undefined ? conditions[node.right.value] : node.right.value; // Get the value of the right node (e.g., '35' or 'sales')
-            
+            const rightValue = conditions[node.right.value] !== undefined ? conditions[node.right.value] : node.right.value; // Get the value of the right node (e.g., '35' or 'sales')
+
             // If rightValue is not a number, it means it's a variable from conditions
-            // const parsedRightValue = isNaN(rightValue) ? rightValue : parseInt(rightValue, 10);
-            
+            const parsedRightValue = isNaN(rightValue) ? rightValue : parseInt(rightValue, 10);
+
             switch (node.value) {
                 case '>':
                     return leftValue > parsedRightValue;
@@ -76,12 +76,13 @@ const evaluateAST = (node, conditions) => {
             }
         }
 
-        return false;
+        return true;
     } catch (error) {
         console.error('Error evaluating AST:', error);
         throw new Error('Failed to evaluate AST');
     }
 };
+
 
 // Controller function to find and evaluate the rule
 const evaluateRule = async (req, res) => {
