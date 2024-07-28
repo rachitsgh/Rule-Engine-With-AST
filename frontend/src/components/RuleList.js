@@ -7,7 +7,7 @@ const RuleList = () => {
   useEffect(() => {
     const fetchRules = async () => {
       try {
-        const response = await axios.get('http://localhost:5004/api/rules');
+        const response = await axios.get('http://localhost:5004/api/rules/getRules');
         setRules(response.data);
       } catch (error) {
         console.error('Error fetching rules:', error);
@@ -19,10 +19,10 @@ const RuleList = () => {
 
   return (
     <div className="bg-white shadow-md rounded-lg p-4">
-      <h2 className="text-2xl font-bold mb-4">Rule List</h2>
+      <h2 className="text-3xl font-bold mb-4">Rule List</h2>
       <ul>
         {rules.map((rule) => (
-          <li key={rule._id} className="mb-2">
+          <li key={rule._id} className="mb-2 text-2xl">
             <strong>{rule.ruleName}</strong>: {rule.rule}
           </li>
         ))}
