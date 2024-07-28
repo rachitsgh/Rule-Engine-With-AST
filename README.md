@@ -31,7 +31,7 @@ The choice of database for storing the above rules and application metadata. Mon
 
 ##API Design
 
-1.create_rule(rule_string) 
+## 1.create_rule(rule_string) 
 
 -This function takes a string representing a rule (as shown in the examples) and returns a Node object representing the corresponding AST. The Shunting Yard algorithm is used to convert the rule string into a postfix expression, which is then used to construct the AST.
 ![create_rule logical diagram](create_rule.png)
@@ -50,7 +50,7 @@ function combine_rules(rules) {
 ```
 ![combine_rule logical diagram](combine_rule.png)
 
-# AST Evaluation Controller
+## 3. AST Evaluation Controller
 
 This controller provides functionality to evaluate rules stored in MongoDB using an Abstract Syntax Tree (AST). It includes methods to reconstruct the AST from node IDs in MongoDB (`reconstructAST`), evaluate the AST against a set of conditions (`evaluateAST`), and handle HTTP requests for rule evaluation (`evaluateRule`). The `evaluateRule` function retrieves a rule by name, reconstructs its AST, evaluates it based on provided conditions, and returns the result. Error handling is implemented to return appropriate HTTP status codes and log errors to the console. Ensure MongoDB models for `Node` and `Rule` are defined and connected in your application.
 
@@ -82,4 +82,8 @@ To set up the frontend for the rule engine application, follow these steps:
    npm i
    node start
    ```
-   
+
+  ## Hosting
+  -Backend: Hosted on Render.
+	-Frontend: Hosted on Netlify.
+
