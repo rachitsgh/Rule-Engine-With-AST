@@ -58,7 +58,7 @@ This controller provides functionality to evaluate rules stored in MongoDB using
 ## cloning repo
 
 ```bash
-git clone https://github.com/your-repo/repository.git
+git clone [https://github.com/your-repo/repository.git](https://github.com/rachitsgh/Rule-Engine-With-AST.git)
 ```
 
 ## Backend Setup
