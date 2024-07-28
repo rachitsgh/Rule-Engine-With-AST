@@ -1,7 +1,8 @@
 // server.js or app.js
 const express = require('express');
-const connectDB = require('./database/config');
+const connectDB = require('./config/database');
 const router = require('./routes/ruleRoutes')
+const cors = require('cors');
 
 const app = express();
 
@@ -12,6 +13,7 @@ const app = express();
 connectDB();
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 
 // Routes
