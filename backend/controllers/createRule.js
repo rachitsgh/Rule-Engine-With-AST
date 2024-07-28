@@ -15,6 +15,17 @@ const createRule = async (req, res) => {
             return res.status(400).send({ error: "rule can't be null" })
         }
 
+        const isValidRule = validateRule(rule);
+        if (!isValidRule) {
+            return res.status(400).send({ error: "Invalid rule format. Ensure it contains logical and comparison operators." });
+        }
+
+
+        const existingRule = await Rule.findOne({ ruleName: rule_name });
+        if (existingRule) {
+            return res.status(400).send({ error: "Rule with the same name already exists." });
+        }
+
         //Shunting Yard Algorith
         const PRECEDENCE = {
             '(': -1,
@@ -123,6 +134,7 @@ const createRule = async (req, res) => {
         if (root) {
             const newRule = new Rule({
                 ruleName: rule_name,
+                rule:rule,
                 root: root._id,
                 postfixExpr
             });
@@ -137,5 +149,11 @@ const createRule = async (req, res) => {
         res.status(500).send({ error: "Invalid Server Error" })
     }
 }
+
+const validateRule = (rule) => {
+    const rulePattern = /\w+\s*(<|>|=|<=|>=)\s*('[^']*'|\w+)\s*(AND|OR)\s*\w+\s*(<|>|=|<=|>=)\s*('[^']*'|\w+)/i;
+    return rulePattern.test(rule);
+};
+
 
 module.exports = { createRule };
