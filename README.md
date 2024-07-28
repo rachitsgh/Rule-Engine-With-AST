@@ -2,11 +2,11 @@
 
 ## Objective
 
-Develop a simple 3-tier rule engine application (Simple UI, API, and Backend, Data) to determine user eligibility based on attributes like age, department, income, spend, etc. The system uses an Abstract Syntax Tree (AST) to represent conditional rules, allowing for dynamic creation, combination, and modification of these rules.
+A simple 3-tier rule engine application (Simple UI, API, and Backend, Data) to determine user eligibility based on attributes like age, department, income, spend, etc. The system uses an Abstract Syntax Tree (AST) to represent conditional rules, allowing for dynamic creation, combination, and modification of these rules.
 
 ## Data Structure
 
-Define a data structure to represent the AST. The data structure should allow rule changes. One possible data structure is a `Node` with the following fields:
+A data structure to represent the AST. The data structure should allow rule changes. One possible data structure is a `Node` with the following fields:
 
 - **type**: String indicating the node type ("operator" for AND/OR, "operand" for conditions)
 - **left**: Reference to another Node (left child)
@@ -15,7 +15,7 @@ Define a data structure to represent the AST. The data structure should allow ru
 
 ## Data Storage
 
-Define the choice of database for storing the above rules and application metadata. MongoDB is a suitable choice for its flexibility and JSON-like documents.
+The choice of database for storing the above rules and application metadata. MongoDB is a suitable choice for its flexibility and JSON-like documents.
 
 ### Schema Example
 
