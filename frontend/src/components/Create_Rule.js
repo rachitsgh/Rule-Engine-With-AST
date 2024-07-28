@@ -14,7 +14,7 @@ const CreateRule = () => {
     setError(null);
     setResponse(null);
     try {
-      const res = await axios.post('http://localhost:5004/api/rules/create', {
+      const res = await axios.post('https://rule-engine-with-ast-1.onrender.com/api/rules/create', {
         rule_name: ruleName,
         rule,
       });

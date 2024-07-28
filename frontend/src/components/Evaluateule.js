@@ -12,7 +12,7 @@ const EvaluateRule = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5004/api/rules/eval', {
+      const response = await axios.post('https://rule-engine-with-ast-1.onrender.com/api/rules/eval', {
         rule_name: ruleName,
         conditions: JSON.parse(conditions),
       });

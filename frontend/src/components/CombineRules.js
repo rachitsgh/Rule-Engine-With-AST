@@ -27,7 +27,7 @@ const CombineRules = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5004/api/rules/combine_rules', {
+            const response = await axios.post('https://rule-engine-with-ast-1.onrender.com/api/rules/combine_rules', {
                 rule_name: ruleName,
                 rules
             });

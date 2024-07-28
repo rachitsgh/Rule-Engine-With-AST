@@ -7,7 +7,7 @@ const RuleList = () => {
   useEffect(() => {
     const fetchRules = async () => {
       try {
-        const response = await axios.get('http://localhost:5004/api/rules/getRules');
+        const response = await axios.get('https://rule-engine-with-ast-1.onrender.com/api/rules/getRules');
         setRules(response.data);
       } catch (error) {
         console.error('Error fetching rules:', error);
