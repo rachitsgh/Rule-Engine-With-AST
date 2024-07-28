@@ -5,6 +5,7 @@ import CreateRule from './components/Create_Rule';
 // import CombineRules from './components/CombineRules';
 import EvaluateRule from './components/Evaluateule';
 import { ToastContainer } from 'react-toastify';
+import Header from './components/Header';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <Router>
       <div>
+        <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create-rule" element={<CreateRule />} />
