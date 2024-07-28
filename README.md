@@ -22,7 +22,16 @@ Define the choice of database for storing the above rules and application metada
 **Rule Schema**:
 ```json
 {
-  "ruleId": "string",
-  "ruleString": "string",
+  "rule_name": "string",
+  "rule": "string",
+  "postfixExpr":"string",
   "AST": "object"
 }
+```
+
+##API Design
+
+1.create_rule(rule_string) 
+
+-This function takes a string representing a rule (as shown in the examples) and returns a Node object representing the corresponding AST. The Shunting Yard algorithm is used to convert the rule string into a postfix expression, which is then used to construct the AST.
+![create_rule logical diagram](create_rule.png)
