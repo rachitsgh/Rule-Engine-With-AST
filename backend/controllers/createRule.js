@@ -105,7 +105,7 @@ const createRule = async (req, res) => {
                     const operand1 = nodestack.pop();
                     const operand2 = nodestack.pop();
                     const node = new Node({
-                        elemType: ElemType.COMPARISON,
+                        elemType: token==='and'||token==='or'?ElemType.LOGICAL:ElemType.COMPARISON,
                         value: token,
                         left: operand2._id,
                         right: operand1._id
