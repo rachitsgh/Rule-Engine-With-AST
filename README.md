@@ -1,5 +1,7 @@
 # Rule Engine with AST
 
+![demo](rule_engine_demo.mkv)
+
 ## Objective
 
 A simple 3-tier rule engine application (Simple UI, API, and Backend, Data) to determine user eligibility based on attributes like age, department, income, spend, etc. The system uses an Abstract Syntax Tree (AST) to represent conditional rules, allowing for dynamic creation, combination, and modification of these rules.
@@ -86,4 +88,6 @@ To set up the frontend for the rule engine application, follow these steps:
   ## Hosting
  -Backend: Hosted on Render
 -Frontend: Hosted on Netlify
+
+
 
