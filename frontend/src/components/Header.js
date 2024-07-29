@@ -6,8 +6,9 @@ const Header = () => {
   return (
     <header className="bg-gradient-to-r from-emerald-400 to-cyan-400 p-6 text-white">
       <nav className="flex justify-between items-center">
-        <Link to="/" className="hover:underline"><h1 className="text-3xl">Rule Engine</h1>
+        <Link to="/" className="hover:underline"><h1 className="text-3xl">Rule Engine </h1>
         </Link>
+        <span className='text-2xl font-bold '>(kindly wait for 10-30 seconds after submitting query ) </span>
         <div className="space-x-6">
           <Link to="/create-rule" className="text-3xl hover:underline">
             Create Rule
